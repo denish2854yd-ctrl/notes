@@ -1,7 +1,13 @@
 import { sql } from "@/lib/db";
 import { NextResponse } from "next/server";
+import { requireAuth } from "@/lib/auth";
 
 export async function POST(request) {
+    const auth = await requireAuth(request);
+    if (auth.error) {
+        return NextResponse.json({ message: auth.message }, { status: auth.status });
+    }
+
     try {
         const { id } = await request.json();
         let shareid = Date.now().toString(36);

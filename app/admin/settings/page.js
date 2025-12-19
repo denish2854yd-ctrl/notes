@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input"
 import { useRef } from "react";
 import { toast } from "@/hooks/use-toast";
 import { KeyRound } from "lucide-react";
+import ApiToken from "./ApiToken";
 
 const SettingsComponent = () => {
   const newPassword = useRef('');
@@ -26,7 +27,7 @@ const SettingsComponent = () => {
     }
   }
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center p-4">
+    <div className="h-full w-full flex flex-col items-center justify-center p-4 gap-6">
       <div className="bg-card border rounded-xl p-8 shadow-lg max-w-md w-full">
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -52,6 +53,7 @@ const SettingsComponent = () => {
           </Button>
         </div>
       </div>
+      <ApiToken />
     </div>
   )
 }
