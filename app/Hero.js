@@ -14,7 +14,7 @@ const Hero = () => {
             </div>
             <div className='animate-fadeIn group'>
                 <Image
-                    src={"/shubham2.jpg"}
+                    src={"/logo.jpg"}
                     alt="Logo"
                     priority
                     width={400}
