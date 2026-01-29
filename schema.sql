@@ -87,10 +87,11 @@ CREATE TABLE IF NOT EXISTS password (
 );
 
 -- Insert default password if not exists (should be changed on first login)
--- Default password: 'admin' (hashed with bcrypt)
+-- Default password: 'admin' (hashed with crypto-js)
 -- IMPORTANT: Change this immediately after deployment!
+-- Default secret key used for hashing: 'SECRET_123'
 INSERT INTO password (id, pass, last_updated)
-VALUES (1, 'U2FsdGVkX1+N5gHgpnnHPR1ks+NP9cKIPHJbdEgIFAc=', CURRENT_TIMESTAMP)
+VALUES (1, 'U2FsdGVkX1+k/Vgs8Np7OPut/tWAZn+gSOIofhUutqY=', CURRENT_TIMESTAMP)
 ON CONFLICT (id) DO NOTHING;
 
 -- =============================================================================
