@@ -46,6 +46,14 @@ This project leverages a modern, full-stack JavaScript ecosystem.
 *   **Neon** - Serverless Postgres database
 *   **Vercel** - Deployment and hosting
 
+## 📚 Documentation
+
+- **[Deployment Guide](DEPLOYMENT.md)** - Complete guide for deploying your own instance
+- **[API Reference](API_REFERENCE.md)** - Full API documentation
+- **[API Overview](API_OVERVIEW.md)** - Quick API overview
+- **[Security](SECURITY.md)** - Security policies and guidelines
+- **[Changelog](CHANGES.md)** - Version history and updates
+
 ## Getting Started
 
 To get a local copy up and running, follow these simple steps.
@@ -74,15 +82,26 @@ Make sure you have Node.js and npm (or yarn/pnpm/bun) installed on your machine.
 
 3.  **Set up environment variables**
 
-    Create a `.env.local` file in the root of your project and add your database connection string. You can copy the example file:
+    Create a `.env.local` file in the root of your project. You can copy the example file:
     ```sh
     cp .env.example .env.local
     ```
     Then, edit `.env.local` with your credentials:
-    ```
+    ```env
     DATABASE_URL="your_neon_database_connection_string"
     SESSION_SECRET="your_session_secret_here"
+    NEXT_PUBLIC_DOMAIN="http://localhost:3000"  # Your domain URL
+    NEXT_PUBLIC_USERNAME="Your Name"            # Optional: Display name
+    NEXT_PUBLIC_LOGO="logo.jpg"                 # Optional: Logo filename
     ```
+
+4.  **Initialize the database**
+
+    Run the SQL commands from `schema.sql` in your PostgreSQL database to create all required tables.
+
+5.  **Add your logo** (Optional)
+
+    Place a logo image file in the `/public` folder (e.g., `logo.jpg`) and update `NEXT_PUBLIC_LOGO` in `.env.local`.
 
 ### Running the Application
 
